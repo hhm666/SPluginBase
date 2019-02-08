@@ -1,0 +1,8 @@
+spluginbase.lang.defaultSet: "Your language has been set to %1 by region. If you want to change it, please type /lang list to see the list of languages, then type /lang set <language code> to set the language!"
+spluginbase.lang.set.notFound: "No language: %1!"
+spluginbase.lang.set.success: "Successfully set the language to %1!"
+spluginbase.lang.load.pluginNotFound: "Multi-language loading of plugin %1 failed!"
+spluginbase.lang.load.usePluginDefaultLanguage: "Cannot find %2 plugin %1 language configuration file, so use %3 plugin default language configuration file"
+spluginbase.lang.load.useEN_US: "Cannot find %2 plugin %1 language configuration file, so use %3 language configuration file"
+spluginbase.command.lang.notFound: "Unknown usage, please enter /lang help to see usage"
+spluginbase.command.lang.help: "§6---SPluginBase-LanguageSystemHelp---\n§a/lang set <language code> Set language\n§b/lang list View language code"

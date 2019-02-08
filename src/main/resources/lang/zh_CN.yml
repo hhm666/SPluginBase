@@ -1,0 +1,8 @@
+spluginbase.lang.defaultSet: "你的语言已经根据地区设置为%1,如果想更改,请输入/lang list来查看语言列表,然后输入/lang set <语言代码> 来设置语言!"
+spluginbase.lang.set.notFound: "没有语言:%1!"
+spluginbase.lang.set.success: "成功设置语言为%1!"
+spluginbase.lang.load.pluginNotFound: "插件%1的多语言加载失败!"
+spluginbase.lang.load.usePluginDefaultLanguage: "无法找到%2的插件%1语言配置文件,因此使用%3的插件默认语言配置文件"
+spluginbase.lang.load.useEN_US: "无法找到%2的插件%1语言配置文件,因此使用%3语言配置文件"
+spluginbase.command.lang.notFound: "未知用法,请输入/lang help来查看用法"
+spluginbase.command.lang.help: "§6---SPluginBase-LanguageSystemHelp---\n§a/lang set <语言代码> 设置语言\n§b/lang list 查看语言代码"

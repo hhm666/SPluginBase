@@ -1,0 +1,7 @@
+name: SPluginBase
+version: "1.0.0"
+api: ["1.0.0"]
+author: "hhm"
+description: "A Nukkit plugin that eases the burden on developers. Including language API, commonly used expansion functions.By hhm."
+load: "STARTUP"
+main: "net.mcpes.summit.hhm.base.SPluginBase"
