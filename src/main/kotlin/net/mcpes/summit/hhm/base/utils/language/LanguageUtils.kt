@@ -31,7 +31,7 @@ object LanguageUtils {
         var entry = jar.getEntry("lang/$nowLang.yml")
         var stream: InputStream?
         if (entry == null) {
-            SPluginBase.info("spluginbase.lang.load.useEN-US" translate arrayOf(pluginBase.fullName, list[nowLang], list["en_US"]))
+            SPluginBase.info("spluginbase.lang.load.useEN_US" translate arrayOf(pluginBase.fullName, list[nowLang], list["en_US"]))
             entry = jar.getEntry("lang/en_US.yml")
             stream = jar.getInputStream(entry)
             if (stream == null) {

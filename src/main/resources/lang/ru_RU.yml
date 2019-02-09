@@ -1,0 +1,8 @@
+spluginbase.lang.defaultSet: "Ваш язык был установлен на%1 по регионам. Если вы хотите изменить его, введите /lang list, чтобы увидеть список языков, затем введите /lang set <код языка>, чтобы установить язык!"
+spluginbase.lang.set.notFound: "Нет языка:%1!"
+spluginbase.lang.set.success: "Успешно установлен язык%1!"
+spluginbase.lang.load.pluginNotFound: "Многоязычная загрузка плагина%1 не удалась!"
+spluginbase.lang.load.usePluginDefaultLanguage: "Не удается найти файл конфигурации языка%2 плагина%1, поэтому используйте файл конфигурации языка плагина%3 по умолчанию"
+spluginbase.lang.load.useEN_US: "Не удается найти файл конфигурации языка%2 плагин%1, поэтому используйте файл конфигурации языка%3"
+spluginbase.command.lang.notFound: "Неизвестное использование, введите /lang help, чтобы увидеть использование"
+spluginbase.command.lang.help: "§6 --- SPluginBase-LanguageSystemHelp --- \n§a /lang set <код языка> Установить язык \n§b /lang list Просмотреть код языка"
