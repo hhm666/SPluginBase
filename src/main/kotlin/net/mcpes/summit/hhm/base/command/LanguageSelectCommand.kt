@@ -25,6 +25,10 @@ class LanguageSelectCommand : Command("lang") {
             "help" -> {
                 sender.sendMessage("spluginbase.command.lang.help" translate arrayOf())
             }
+            else -> {
+                sender.sendMessage("spluginbase.command.lang.notFound" translate arrayOf())
+                return false
+            }
         }
         return true
     }
