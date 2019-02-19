@@ -9,6 +9,7 @@ import java.io.InputStream
 import java.net.JarURLConnection
 import java.net.URL
 import java.util.*
+import java.util.jar.JarEntry
 import java.util.jar.JarFile
 
 infix fun String.translate(params: Array<Any?>): String {
@@ -21,12 +22,44 @@ object LanguageUtils {
     val configs = hashMapOf<PluginBase, Config>()
     val data: HashMap<String, String> = hashMapOf()
     var nowLang: String = getDefaultLanguage()
+    val pluginFiles = hashMapOf<String, File>()
+
+    fun saveMainConfig(pluginBase: PluginBase): Boolean {
+        if (File(pluginBase.dataFolder.absolutePath + "/config.yml").exists()) return true
+        if (!pluginBase.saveResource("config_$nowLang.yml", "config.yml", false)) {
+            if (!pluginBase.saveResource("config_en_US.yml", "config.yml", false)) {
+                val file = if (pluginFiles.containsKey(pluginBase.name)) {
+                    pluginFiles[pluginBase.name]!!
+                } else {
+                    val f = PluginBase::class.java.getDeclaredField("file")
+                    f.isAccessible = true
+                    f.get(pluginBase) as File
+                }
+                val jar = JarFile(file)
+                val jarPath = "jar:" + file.toURL().toString() + "!/"
+                val jarURL = URL(jarPath)
+                val jarCon = jarURL.openConnection() as JarURLConnection
+                val jarFile = jarCon.jarFile
+                var jf: JarEntry? = null
+                jarFile.entries().iterator().forEach {
+                    if (it.name.startsWith("config_") && !it.isDirectory) {
+                        jf = it
+                        return@forEach
+                    }
+                }
+                if (jf == null) return false
+                return pluginBase.saveResource(jf.toString(), "config.yml", false)
+            }
+        }
+        return true
+    }
 
     fun load(pluginBase: PluginBase, title: String = "") {
         val config = Config(Config.YAML)
         val f = PluginBase::class.java.getDeclaredField("file")
         f.isAccessible = true
         val file = f.get(pluginBase) as File
+        pluginFiles[pluginBase.name] = file
         val jar = JarFile(file)
         var entry = jar.getEntry("lang/$nowLang.yml")
         var stream: InputStream?

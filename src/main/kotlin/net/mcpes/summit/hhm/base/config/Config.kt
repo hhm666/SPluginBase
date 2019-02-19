@@ -1,7 +1,5 @@
 package net.mcpes.summit.hhm.base.config
 
-import cn.hhm.mc.game.base.utils.config.ConfigData
-import cn.hhm.mc.game.base.utils.config.ConfigOperation
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
 import net.mcpes.summit.hhm.base.utils.Charset

@@ -1,4 +1,4 @@
-package cn.hhm.mc.game.base.utils.config
+package net.mcpes.summit.hhm.base.config
 
 import java.util.*
 
